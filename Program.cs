@@ -126,3 +126,35 @@ namespace AgendaClinica
             }
         }
     }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            SistemaClinica clinica = new SistemaClinica();
+            int opcion;
+
+            do
+            {
+                Console.WriteLine("\n=== SISTEMA DE TURNOS - CLÍNICA ===");
+                Console.WriteLine("1. Registrar Turno");
+                Console.WriteLine("2. Visualizar Agenda (Reportería)");
+                Console.WriteLine("3. Buscar Cita de Paciente");
+                Console.WriteLine("4. Salir");
+                Console.Write("Seleccione una opción: ");
+                
+                if (int.TryParse(Console.ReadLine(), out opcion))
+                {
+                    switch (opcion)
+                    {
+                        case 1: clinica.RegistrarTurno(); break;
+                        case 2: clinica.ListarTurnos(); break;
+                        case 3: clinica.BuscarPaciente(); break;
+                        case 4: Console.WriteLine("Saliendo del sistema..."); break;
+                        default: Console.WriteLine("Opción no válida."); break;
+                    }
+                }
+            } while (opcion != 4);
+        }
+    }
+}
