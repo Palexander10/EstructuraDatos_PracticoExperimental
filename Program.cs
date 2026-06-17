@@ -1,5 +1,4 @@
-﻿C#
-using System;
+﻿using System;
 
 namespace AgendaClinica
 {
